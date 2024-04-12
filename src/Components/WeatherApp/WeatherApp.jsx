@@ -27,10 +27,10 @@ const WeatherApp = () => {
             const data = await response.json();
 
             setWeatherData({
-                temperature: data.main.temp,
+                temperature:Math.floor(data.main.temp),
                 location: data.name,
                 humidity: data.main.humidity,
-                windSpeed: data.wind.speed,
+                windSpeed: Math.floor(data.wind.speed),
 
             })
             if (data.weather[0].icon === '01d' || data.weather[0].icon === '01n') {
